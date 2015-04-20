@@ -1,0 +1,29 @@
+<template name="modalForgotPass">
+  <div id="modalForgotPass" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">
+  <div class="modal-header text-center">
+    <h2 id="modalTitle" class="modal-title">Ok. We are only <i class="step fi-torsos-all size-48 style3"></i>.</h2>
+    <small class="font-bold">Anybody can forget a password. Type it here and we'll email you a link for resetting it</small>
+    </div>
+    <div class="modal-body">
+    <form>
+      <div class="row">
+        <div class="large-12 columns">
+          <input type="email" id="email" placeholder="Email" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 centered columns">
+          <input type="submit" id="btnForgot" class="button radius expand" value="Reset password">
+        </div>
+      </div>
+    </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    </div>
+    </div>
+    </div>
+  </div>
+</template>

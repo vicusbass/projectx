@@ -7,3 +7,12 @@
 meteor-platform
 autopublish
 insecure
+accounts-password
+accounts-base
+alanning:roles
+iron:router
+mizzao:jquery-ui
+summernote:summernote
+natestrauser:animate-css
+fortawesome:fontawesome
+rollypolly:sparkline

@@ -1,0 +1,72 @@
+<template name="login">
+<div class="login-container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center m-b-md">
+                <h3>PLEASE LOGIN TO APP</h3>
+                <small>This is the best app ever!</small>
+            </div>
+            <div class="hpanel">
+                <div class="panel-body">
+                        <form action="#" id="loginForm">
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email</label>
+                                <input type="text" placeholder="example@gmail.com" title="Please enter you email" required="" value="" name="email" id="email" class="form-control">
+                                <span class="help-block small">Your unique username to app</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label" for="password">Password</label>
+                                <input type="password" title="Please enter your password" placeholder="******" required="" value="" name="password" id="password" class="form-control">
+                                <span class="help-block small">Yur strong password</span>
+                            </div>
+                            <button class="btn btn-success btn-block">Login</button>
+                            <a class="btn btn-default btn-block" href="#" data-toggle="modal" data-target="#modalForgotPass">Forgot password?</a>
+                            {{> modalForgotPass}}
+                        </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <strong>HOMER</strong> - AngularJS Responsive WebApp <br/> 2015 Copyright Company Name
+        </div>
+    </div>
+</div>
+</template>
+
+<!-- <template name="login">
+  <div class="large-3 large-centered columns">
+    <div class="loginbox">
+      <div class="row">
+        <div class="large-12 columns">
+          <form data-abide>
+            <div class="row">
+              <div class="large-12 columns">
+                <input type="email" id="email" placeholder="Email" required>
+                <small class="error">An email address is required.</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 columns">
+                <input type="password" id="password" placeholder="Password" required>
+                <small class="error">Password is required.</small>
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 centered columns">
+                <input type="submit" id="btnLogin" class="button radius expand" value="Log In">
+              </div>
+            </div>
+            <div class="row">
+              <div class="large-12 centered columns">
+                <a href="#" data-reveal-id="modalForgotPass">Forgot password?</a>
+                {{> modalForgotPass}}
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</template> -->
