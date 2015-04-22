@@ -1,0 +1,21 @@
+<template name="applayout">
+    <div id="header">
+        {{> yield "header"}}
+    </div>
+    <aside id="menu">
+        <div id="navigation">
+            <div class="profile-picture">
+                <a href="#">
+                    <img src="{{currentUser.profile.img}}" alt="No image" class="img-circle m-b">
+                </a>
+                <div class="stats-label text-color">
+                    <span class="font-extra-bold font-uppercase">{{currentUser.profile.name}}</span>
+                </div>
+            </div>
+            {{> yield "menu"}}
+        </div>
+    </aside>
+    <div id="wrapper">
+        {{> yield "content"}}
+    </div>
+</template>
