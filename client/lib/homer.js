@@ -12,7 +12,7 @@ $(document).ready(function () {
     // Handle minimalize sidebar menu
     $('.hide-menu').click(function(event){
         event.preventDefault();
-        console.log("Hiding menu");
+        alert("test");
         if ($(window).width() < 769) {
             $("body").toggleClass("show-sidebar");
         } else {
