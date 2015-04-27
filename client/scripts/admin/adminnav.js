@@ -24,9 +24,10 @@ Template.adminmenu.events({
 	'click a#users': function(event, template) {
 		event.preventDefault();
 		if (Roles.userIsInRole(Meteor.user(), ["superadmin"])) {
-			Router.go("/admin/users")
+			Router.go("/admin/users");
 		} else {
 			//TODO throw auth error
 		}
 	}
 });
+

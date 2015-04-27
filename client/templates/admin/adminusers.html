@@ -1,21 +1,18 @@
 <template name="adminusers">
-    <div class="normalheader transition animated fadeIn">
-        <div class="hpanel">
-            <div class="panel-body">
-                <a class="small-header-action" href="">
-                    <div class="clip-header">
-                        <i class="fa fa-arrow-up"></i>
+    {{> ContentHeader header_title="Users" header_description="Users Management"}}
+    <div class="content animate-panel">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hpanel">
+                    <div class="panel-heading">
+                        <button class="btn btn-success" type="button"><i class="fa fa-group"></i> <br>ADD USER</button>
                     </div>
-                </a>
-
-                <h2 class="font-light m-b-xs">
-                    Users
-                </h2>
-                <small>Users management</small>
+                    <div class="panel-body">
+                        {{> reactiveTable class="display table table-bordered dataTable" collection=usersCol settings=settings}}
+                    </div>
+                    {{> ModalEditClient}}
+                </div>
             </div>
         </div>
     </div>
-	<div class="content animate-panel">
-		<h1>LISTA DE USERS</h1>
-	</div>
 </template>
