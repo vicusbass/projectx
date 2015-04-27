@@ -31,8 +31,13 @@ Template.ModalEditClient.events({
 				Meteor.call('updateUser', userId, firstname, lastname, function(err, result) {
 					if (err) console.log(err)
 				});
+				$("#editUserForm")[0].reset();
 				$("#editUser").modal("hide");
 			});
+	},
+	'click #cancelEditUser': function(event, template) {
+		event.preventDefault();
+		$("#editUserForm")[0].reset();
 	}
 });
 

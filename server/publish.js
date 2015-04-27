@@ -5,18 +5,20 @@ Meteor.publish(null, function() {
 
 //publish users
 Meteor.publish('AdminUsers', function() {
-	var user = Users.findOne({
-		_id: this.userId
-	});
-
-	if (Roles.userIsInRole(user, [SUPERADMIN])) {
-		return Users.find({}, {
-			fields: {
-				emails: 1,
-				profile: 1,
-				roles: 1
-			}
+	if (this.userId != null) {
+		var user = Users.findOne({
+			_id: this.userId
 		});
+
+		if (Roles.userIsInRole(user, [SUPERADMIN])) {
+			return Users.find({}, {
+				fields: {
+					emails: 1,
+					profile: 1,
+					roles: 1
+				}
+			});
+		}
 	}
 });
 
@@ -27,6 +29,3 @@ Meteor.publish('SingleUser', function publishFunction(id) {
 		_id: id
 	});
 });
-
-
-

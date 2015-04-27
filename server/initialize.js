@@ -1,15 +1,14 @@
 Meteor.startup(function() {
   console.log("Just started the server");
-  
+
   //setup initial roles - dirty, if we have 3 roles, won't do anything
   var countRoles = Roles.getAllRoles().count();
-  console.log(countRoles);
   if (countRoles !== 3) {
     Roles.createRole(SUPERADMIN);
     Roles.createRole(ADMIN);
     Roles.createRole(USER);
   }
-  
+
   if (Meteor.users.find({}).count() === 0) {
     var userid1 = Accounts.createUser({
       username: "vasile.pop@gmail.com",
@@ -33,5 +32,17 @@ Meteor.startup(function() {
     });
     Roles.addUsersToRoles(userid1, [SUPERADMIN]);
     Roles.addUsersToRoles(userid2, [SUPERADMIN]);
+    for (var i = 0; i < 10; i++) {
+      Accounts.createUser({
+        username: Fake.word() + i,
+        email: Fake.word() + i + '@' + Fake.word() + '.com',
+        password: Fake.word(),
+        profile: {
+          firstname: Fake.word(),
+          lastname: Fake.word(),
+          img: Fake.word()
+        }
+      });
+    }
   }
 });
