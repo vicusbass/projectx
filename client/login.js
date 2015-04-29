@@ -13,7 +13,7 @@ Template.login.events({
 					//TODO route to corresponding page
 				}
 			} else {
-				console.log(Error);
+				console.log(Error.error);
 			}
 		});
 	}

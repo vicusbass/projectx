@@ -5,7 +5,7 @@ Meteor.publish(null, function() {
 
 //publish users
 Meteor.publish('AdminUsers', function() {
-	if (this.userId != null) {
+	if (this.userId) {
 		var user = Users.findOne({
 			_id: this.userId
 		});
@@ -19,6 +19,8 @@ Meteor.publish('AdminUsers', function() {
 				}
 			});
 		}
+	} else {
+		this.ready();
 	}
 });
 
