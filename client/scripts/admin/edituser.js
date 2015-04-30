@@ -6,11 +6,11 @@ var getEditedUser = function() {
 	return user;
 };
 
-Template.ModalEditClient.helpers({
+Template.ModalEditUser.helpers({
 	user: getEditedUser
 });
 
-Template.ModalEditClient.events({
+Template.ModalEditUser.events({
 	'click #saveEditUser': function(event, template) {
 		event.preventDefault();
 		var user = getEditedUser();
@@ -28,7 +28,7 @@ Template.ModalEditClient.events({
 			},
 			function() {
 				var userId = Session.get('selectedUserId')
-				Meteor.call('updateUser', userId, firstname, lastname, function(err, result) {
+        Meteor.call('updateUser', userId, {profile:{firstname:firstname,lastname:lastname}},function(err, result) {
 					if (err) console.log(err)
 				});
 				$("#editUserForm")[0].reset();
