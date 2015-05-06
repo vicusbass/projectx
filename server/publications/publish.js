@@ -5,12 +5,7 @@ Meteor.publish(null, function() {
 
 //publish users
 Meteor.publish('AdminUsers', function() {
-	if (this.userId) {
-		var user = Users.findOne({
-			_id: this.userId
-		});
-
-		if (Roles.userIsInRole(user, [SUPERADMIN])) {
+		if (Roles.userIsInRole(this.userId, [SUPERADMIN])) {
 			return Users.find({}, {
 				fields: {
 					emails: 1,
@@ -19,7 +14,7 @@ Meteor.publish('AdminUsers', function() {
 				}
 			});
 		}
-	} else {
+	 else {
 		this.ready();
 	}
 });
@@ -27,7 +22,15 @@ Meteor.publish('AdminUsers', function() {
 //publish single user by _id
 Meteor.publish('SingleUser', function publishFunction(id) {
 	check(id, String);
+  if (Roles.userIsInRole(this.userId, [SUPERADMIN, ADMIN])) {
 	return Meteor.users.find({
 		_id: id
-	});
+	},{
+				fields: {
+					emails: 1,
+					profile: 1,
+					roles: 1
+				}
+			});
+}
 });

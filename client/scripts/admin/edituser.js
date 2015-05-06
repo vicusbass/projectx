@@ -41,6 +41,14 @@ Template.ModalEditUser.events({
 	}
 });
 
+Template.ModalEditUser.onCreated(function () {
+  console.log("Created modal template");
+});
+
+Template.ModalEditUser.onDestroyed(function () {
+  console.log("Destroyed modal template");
+});
+
 
 // Template.ModalEditClient.rendered = function() {
 // 	var userId = Session.get('selectedUserId');

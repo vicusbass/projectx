@@ -41,7 +41,8 @@ Template.adminusers.events({
 			var user = this;
 			e.preventDefault();
 			Session.set('selectedUserId', user._id);
-			$("#editUser").modal("show");
+      Modal.show('ModalEditUser');
+// 			$("#editUser").modal("show");
 		}
 	}
 });
