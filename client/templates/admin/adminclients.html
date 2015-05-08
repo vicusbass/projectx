@@ -1,11 +1,12 @@
-<template name="adminclients">
+<template name="AdminClients">
 {{> ContentHeader header_title="Clients"}}
 <div class="content animate-panel">
     <div class="row">
         <div class="col-lg-12">
             <div class="hpanel">
                 <div class="panel-heading">
-                    <a href="{{pathFor 'AddClient'}}" class="btn btn-success" type="button">
+                    <!-- <a href="{{pathFor 'AddClient'}}" class="btn btn-success" type="button"> -->
+                    <a href="#" id="addClientBtn" class="btn btn-success" type="button">
                     <i class="fa fa-group"></i><br>ADD CLIENT</a>
                 </div>
                 <div class="panel-body">
@@ -18,5 +19,11 @@
 </template>
 
 <template name="ClientActionsRow">
-  <button class="btn btn-xs btn-danger delete-client" type="button"><i class="fa fa-trash-o"></i> <span class="bold">Delete</span></button>
+    <button class="btn btn-info btn-xs" data-toggle="modal" type="button">
+        <i class="fa fa-paste"></i>Edit
+    </button>
+    <button class="btn btn-xs btn-danger delete-client" type="button">
+        <i class="fa fa-trash-o"></i>
+        <span class="bold">Delete</span>
+    </button>
 </template>
