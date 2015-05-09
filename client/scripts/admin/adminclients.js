@@ -5,14 +5,23 @@ Template.ClientActionsRow.events({
             var currentClientId = this._id;
             console.log("Deleting client with id: " + currentClientId);
             Clients.remove(currentClientId);
-           // Router.go('AdminClients');
+            // Router.go('AdminClients');
         }
     }
 });
 
 Template.AdminClients.events({
-	'click #addClientBtn':function(e){
-		e.preventDefault();
-		Modal.show('ModalAddClient');
-	}
-})
+    'click #addClientBtn': function(e) {
+        e.preventDefault();
+        Modal.show('ModalAddClient');
+    }
+});
+
+//close addClient modal if success
+AutoForm.hooks({
+    addClientForm: {
+        onSuccess: function() {
+            Modal.hide('ModalAddClient');
+        }
+    }
+});
