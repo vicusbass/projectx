@@ -3,10 +3,13 @@ Template.ClientActionsRow.events({
         e.preventDefault();
         if (confirm("Delete this client?")) {
             var currentClientId = this._id;
-            console.log("Deleting client with id: " + currentClientId);
             Clients.remove(currentClientId);
             // Router.go('AdminClients');
         }
+    },
+    'click .edit-client': function(e) {
+        e.preventDefault();
+        Modal.show('ModalEditClient', this);
     }
 });
 
@@ -22,6 +25,11 @@ AutoForm.hooks({
     addClientForm: {
         onSuccess: function() {
             Modal.hide('ModalAddClient');
+        }
+    },
+    editClientForm: {
+        onSuccess: function() {
+            Modal.hide('ModalEditClient');
         }
     }
 });

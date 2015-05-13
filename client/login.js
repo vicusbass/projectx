@@ -5,9 +5,7 @@ Template.login.events({
 		var password = template.find('#password').value;
 		Meteor.loginWithPassword(email, password, function(Error) {
 			if (!Error) {
-				console.log("I just logged in");
 				if (Roles.userIsInRole(Meteor.user(), [SUPERADMIN])) {
-					console.log("Got a superadmin here");
 					Router.go("/admin")
 				} else {
 					//TODO route to corresponding page

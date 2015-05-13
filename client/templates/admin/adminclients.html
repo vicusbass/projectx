@@ -17,9 +17,8 @@
         </div>
     </div>
 </template>
-
 <template name="ClientActionsRow">
-    <button class="btn btn-info btn-xs" data-toggle="modal" type="button">
+    <button class="btn btn-info btn-xs edit-client" type="button">
         <i class="fa fa-paste"></i>Edit
     </button>
     <button class="btn btn-xs btn-danger delete-client" type="button">
@@ -27,15 +26,9 @@
         <span class="bold">Delete</span>
     </button>
 </template>
-
 <template name="ClientCheckbox">
-  <div class="checkbox">
-    <label>
-      <input type="checkbox">
-    </label>
-  </div>
+    <input type="checkbox">
 </template>
-
 <template name="ModalAddClient">
     <div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
@@ -54,7 +47,24 @@
         </div>
     </div>
 </template>
-
+<template name="ModalEditClient">
+    <div class="modal fade" id="addClient" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title">Edit client</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="hpanel">
+                        <div class="panel-body">
+                            {{> EditClientForm}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
 <template name="AddClientForm">
     {{#autoForm collection="Clients" id="addClientForm" type="method" meteormethod="addClient"}}
     <fieldset>
@@ -62,5 +72,14 @@
     </fieldset>
     <button type="button" id="cancelAddClient" class="btn btn-danger" data-dismiss="modal">Cancel</button>
     <button type="submit" id="saveAddClient" class="btn btn-success">Save changes</button>
+    {{/autoForm}}
+</template>
+<template name="EditClientForm">
+    {{#autoForm collection="Clients" id="editClientForm" doc=this type="update"}}
+    <fieldset>
+        {{> afQuickField name='name'}} {{> afQuickField name='country'}} {{> afQuickField name='city'}}
+    </fieldset>
+    <button type="button" id="cancelEditClient" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+    <button type="submit" id="saveEditClient" class="btn btn-success">Save changes</button>
     {{/autoForm}}
 </template>
