@@ -7,7 +7,7 @@
                     <div class="panel-heading">
                         <a href="#" id="addClientBtn" class="btn btn-success" type="button">
                             <i class="fa fa-group"></i>
-                            <br>ADD CLIENT</a>
+                            Add Client</a>
                     </div>
                     <div class="panel-body">
                         {{> tabular table=TabularTables.Clients class="display table table-bordered dataTable"}}
@@ -24,6 +24,10 @@
     <button class="btn btn-xs btn-danger delete-client" type="button">
         <i class="fa fa-trash-o"></i>
         <span class="bold">Delete</span>
+    </button>
+    <button class="btn btn-xs btn-success users-client" type="button">
+        <i class="fa fa-group"></i>
+        <span class="bold">Users</span>
     </button>
 </template>
 <template name="ClientCheckbox">
