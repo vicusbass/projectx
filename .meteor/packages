@@ -9,7 +9,6 @@ accounts-password
 accounts-base
 alanning:roles
 iron:router
-mizzao:jquery-ui
 summernote:summernote
 natestrauser:animate-css
 fortawesome:fontawesome
@@ -23,3 +22,9 @@ anti:fake
 audit-argument-checks
 peppelg:bootstrap-3-modal
 aldeed:tabular
+less
+jquery
+twbs:bootstrap
+zimme:iron-router-active
+okgrow:iron-router-autoscroll
+chrismbeckett:toastr
