@@ -29,3 +29,26 @@ TabularTables.Clients = new Tabular.Table({
         tmpl: Meteor.isClient && Template.ClientActionsRow
     }]
 });
+
+TabularTables.Users = new Tabular.Table({
+    name: "UsersList",
+    collection: Meteor.users,
+    order: [
+        [1, "asc"]
+    ],
+    allow: function(userId) {
+        // check for admin role with alanning:roles package
+        return Roles.userIsInRole(userId, [SUPERADMIN]);
+    },
+    columns: [{
+        data: "profile.firstname",
+        title: "First name"
+    }, {
+        data: "profile.lastname",
+        title: "Last name"
+    }, {
+        title: "Actions",
+        width: "20%",
+        tmpl: Meteor.isClient && Template.ClientActionsRow
+    }]
+});

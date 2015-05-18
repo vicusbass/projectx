@@ -8,7 +8,8 @@
                         <button class="btn btn-success" type="button"><i class="fa fa-group"></i> <br>ADD USER</button>
                     </div>
                     <div class="panel-body">
-                        {{> reactiveTable class="display table table-bordered dataTable" collection=usersCol settings=settings}}
+<!--                         {{> reactiveTable class="display table table-bordered dataTable" collection=usersCol settings=settings}} -->
+                      {{> tabular table=TabularTables.Users class="display table table-bordered dataTable"}}
                     </div>
 <!--                     Modal inserted by bootstrap-3-modal package-->
                 </div>
