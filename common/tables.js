@@ -47,6 +47,9 @@ TabularTables.Users = new Tabular.Table({
         data: "profile.lastname",
         title: "Last name"
     }, {
+        data: "emails.0.address",
+        title: "Email"
+    },{
         title: "Actions",
         width: "20%",
         tmpl: Meteor.isClient && Template.ClientActionsRow
