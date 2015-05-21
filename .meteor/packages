@@ -27,3 +27,4 @@ twbs:bootstrap
 zimme:iron-router-active
 okgrow:iron-router-autoscroll
 chrismbeckett:toastr
+aldeed:simple-schema
