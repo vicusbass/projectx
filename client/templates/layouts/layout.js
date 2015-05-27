@@ -1,12 +1,12 @@
-Template.layout.onRendered(function(){
+Template.layout.onRendered(function() {
 
-    $(window).bind("resize click", function () {
+    $(window).bind("resize click", function() {
 
         // Add special class to minimalize page elements when screen is less than 768px
         setBodySmall();
 
         // Wait until metisMenu, collapse effect finish and set wrapper height
-        setTimeout(function () {
+        setTimeout(function() {
             fixWrapperHeight();
         }, 300);
     });
@@ -16,7 +16,44 @@ Template.layout.onRendered(function(){
 
     // FIXED NAVBAR
     // $('body').addClass('fixed-navbar');
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "1000",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
 
+});
+
+Template.cleanlayout.onRendered(function() {
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-top-center",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "1000",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    }
 
 });
 
@@ -34,7 +71,7 @@ function fixWrapperHeight() {
 
     // Set new height when content height is less then navigation and navigation is less then window
     if (contentH < navigationH && navigationH < $(window).height()) {
-        $("#wrapper").css("min-height", $(window).height() - headerH  + 'px');
+        $("#wrapper").css("min-height", $(window).height() - headerH + 'px');
     }
 
     // Set new height when content is higher then navigation but less then window
@@ -52,4 +89,3 @@ function setBodySmall() {
         $('body').removeClass('show-sidebar');
     }
 }
-

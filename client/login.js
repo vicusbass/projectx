@@ -11,7 +11,7 @@ Template.login.events({
 					//TODO route to corresponding page
 				}
 			} else {
-				console.log(Error.error);
+				toastr.error('Wrong credentials');
 			}
 		});
 	}

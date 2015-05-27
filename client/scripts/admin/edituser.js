@@ -34,6 +34,7 @@ Template.ModalEditUser.events({
 				$("#editUserForm")[0].reset();
 				$("#editUser").modal("hide");
 			});
+		toastr.success('User updated succesfully');
 	},
 	'click #cancelEditUser': function(event, template) {
 		event.preventDefault();

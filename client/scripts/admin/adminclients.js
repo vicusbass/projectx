@@ -5,6 +5,7 @@ Template.ClientActionsRow.events({
             var currentClientId = this._id;
             Clients.remove(currentClientId);
             // Router.go('AdminClients');
+            toastr.success('Client deleted succesfully');
         }
     },
     'click .edit-client': function(e) {
@@ -25,11 +26,13 @@ AutoForm.hooks({
     addClientForm: {
         onSuccess: function() {
             Modal.hide('ModalAddClient');
+            toastr.success('Client added succesfully');
         }
     },
     editClientForm: {
         onSuccess: function() {
             Modal.hide('ModalEditClient');
+            toastr.success('Client updated succesfully');
         }
     }
 });
