@@ -16,6 +16,15 @@ Meteor.methods({
                     'profile.lastname': usr.profile.lastname
                 }
             })
-        } else throw new Meteor.Error(403, "Not authorized to create new users");
+        } else {
+          toastr.error("Not authorized");
+          throw new Meteor.Error(403, "Not authorized to update users");
+        }
     }
+});
+
+Meteor.users.deny({
+  update: function() {
+    return true;
+  }
 });
